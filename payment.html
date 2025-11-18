@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Φόρμα Πληρωμής</title>
+    <script src="payment.js" defer></script>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-header">
+            <h1>Φόρμα Πληρωμής</h1>
+            <p>Συμπληρώστε τα στοιχεία σας για να ολοκληρώσετε την πληρωμή</p>
+        </div>
+        
+        <form id="payment-form">
+            <!-- Πληροφορίες Κάρτας -->
+            <div class="form-section">
+                <h2>Πληροφορίες Κάρτας</h2>
+                
+                <div class="form-group">
+                    <label for="card-number">Αριθμός Κάρτας</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required maxlength="19">
+                </div>
+                
+                <div class="card-details">
+                    <div class="form-group">
+                        <label for="expiry-date">Ημερομηνία Λήξης</label>
+                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required maxlength="5">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="123" required maxlength="3">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cardholder-name">Όνομα Κατόχου Κάρτας</label>
+                    <input type="text" id="cardholder-name" name="cardholder-name" placeholder="ΟΝΟΜΑ ΕΠΩΝΥΜΟ" required>
+                </div>
+            </div>
+            
+            <!-- Πληροφορίες Χρήστη -->
+            <div class="form-section">
+                <h2>Πληροφορίες Χρήστη</h2>
+                
+                <div class="form-group">
+                    <label for="full-name">Πλήρες Όνομα</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="ΟΝΟΜΑ ΕΠΩΝΥΜΟ" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Τηλέφωνο</label>
+                    <input type="tel" id="phone" name="phone" placeholder="2101234567" required>
+                </div>
+            </div>
+            
+            <!-- Διεύθυνση -->
+            <div class="form-section">
+                <h2>Διεύθυνση</h2>
+                
+                <div class="form-group">
+                    <label for="address">Διεύθυνση</label>
+                    <input type="text" id="address" name="address" placeholder="Οδός και Αριθμός" required>
+                </div>
+                
+                <div class="address-details">
+                    <div class="form-group">
+                        <label for="city">Πόλη</label>
+                        <input type="text" id="city" name="city" placeholder="Πόλη" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="postal-code">Ταχυδρομικός Κώδικας</label>
+                        <input type="text" id="postal-code" name="postal-code" placeholder="12345" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Χώρα</label>
+                    <select id="country" name="country" required>
+                        <option value="">Επιλέξτε Χώρα</option>
+                        <option value="GR">Ελλάδα</option>
+                        <option value="CY">Κύπρος</option>
+                        <option value="IT">Ιταλία</option>
+                        <option value="DE">Γερμανία</option>
+                        <option value="FR">Γαλλία</option>
+                        <option value="UK">Ηνωμένο Βασίλειο</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Ποσό Πληρωμής -->
+            <div class="form-section">
+                <div class="amount-section">
+                    <div class="amount-label">
+                        <span>Συνολικό Ποσό:</span>
+                        <span class="amount">€125.50</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Οροι και Υποβολή -->
+            <div class="form-section">
+                <div class="terms-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" class="terms-label">
+                        Συμφωνώ με τους <a href="#">όρους χρήσης</a> και την <a href="#">πολιτική απορρήτου</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    Ολοκλήρωση Πληρωμής
+                    <span class="amount-display">€125.50</span>
+                </button>
+            </div>
+        </form>
+        
+        <div class="payment-security">
+            <div class="security-info">
+                <span class="lock-icon">🔒</span>
+                <span>Ασφαλής πληρωμή με κρυπτογράφηση SSL</span>
+            </div>
+            <div class="accepted-cards">
+                <span>Αποδεκτές Κάρτες:</span>
+                <div class="card-icons">
+                    <span>💳</span>
+                    <span>🔷</span>
+                    <span>🔶</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
